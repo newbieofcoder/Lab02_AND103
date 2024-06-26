@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,10 +43,14 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(v -> {
             String title = edttitle.getText().toString();
             String description = edtdescription.getText().toString();
-            Model model = new Model(title, description);
-            db.them(model);
-            list.add(model);
-            adapter.notifyDataSetChanged();
+            if (title.isEmpty() || description.isEmpty()) {
+                Toast.makeText(this, "Nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show();
+            } else {
+                Model model = new Model(title, description);
+                db.them(model);
+                list.add(model);
+                adapter.notifyDataSetChanged();
+            }
         });
         db = new ModelDatabaseHelper(this);
         list = db.getAllData();
