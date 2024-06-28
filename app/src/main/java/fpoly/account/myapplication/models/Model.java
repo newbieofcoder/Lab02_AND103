@@ -2,14 +2,18 @@ package fpoly.account.myapplication.models;
 
 public class Model {
     private String title;
-    private String description;
+    private String content;
+    private String date;
+    private String type;
 
     public Model() {
     }
 
-    public Model(String title, String description) {
+    public Model(String title, String content, String date, String type) {
         this.title = title;
-        this.description = description;
+        this.content = content;
+        this.date = date;
+        this.type = type;
     }
 
     public String getTitle() {
@@ -20,11 +24,27 @@ public class Model {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getContent() {
+        return content;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

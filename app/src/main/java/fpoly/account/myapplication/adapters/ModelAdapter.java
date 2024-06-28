@@ -23,14 +23,17 @@ public class ModelAdapter extends ArrayAdapter<Model> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.demo11_item_view, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.listview_item, parent, false);
         }
-        TextView title = convertView.findViewById(R.id.demo11_item_tvtitle);
-        TextView description = convertView.findViewById(R.id.demo11_item_tvdescription);
+
+        TextView tv_title = convertView.findViewById(R.id.tv_title);
+        TextView tv_content = convertView.findViewById(R.id.tv_content);
+        TextView tv_date = convertView.findViewById(R.id.tv_date);
 
         Model model = getItem(position);
-        title.setText(model.getTitle());
-        description.setText(model.getDescription());
+        tv_title.setText(model.getTitle());
+        tv_content.setText(model.getContent());
+        tv_date.setText(model.getDate());
 
         return convertView;
     }
