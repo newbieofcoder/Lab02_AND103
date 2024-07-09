@@ -87,50 +87,21 @@
         android:textSize="20sp"
         android:textStyle="italic" />
 
-    <LinearLayout
-        android:layout_marginVertical="10dp"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_gravity="center"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:background="@drawable/custom_button_add"
+        android:text="ADD"
+        android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/custom_button_add"
-            android:text="ADD"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnUpdate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/custom_button_update"
-            android:text="UPDATE"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnDelete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:background="@drawable/custom_button_delete"
-            android:layout_weight="1"
-            android:text="DELETE"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <ListView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/demo11list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="10dp"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="10.0sp"
-        android:fontFamily="sans-serif" />
+        android:fontFamily="sans-serif"
+        android:paddingHorizontal="10dp" />
 </LinearLayout>
