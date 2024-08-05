@@ -1,7 +1,9 @@
 package fpoly.account.myapplication.models;
 
+import java.util.HashMap;
+
 public class ToDo {
-    private int id;
+    private String id;
     private String title;
     private String content;
     private String date;
@@ -11,7 +13,7 @@ public class ToDo {
     public ToDo() {
     }
 
-    public ToDo(int id, String title, String content, String date, String type, int status) {
+    public ToDo(String id, String title, String content, String date, String type, int status) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -61,11 +63,22 @@ public class ToDo {
         this.status = status;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
+    }
+
+    public HashMap<String, Object> convertHashmap() {
+        HashMap<String, Object> work = new HashMap<>();
+        work.put("id", this.id);
+        work.put("title", this. title);
+        work.put("content", this. content);
+        work.put("date", this. date);
+        work.put("type", this. type);
+        work.put("status", this. status);
+        return work;
     }
 }

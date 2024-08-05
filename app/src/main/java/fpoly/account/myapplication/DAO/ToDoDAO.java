@@ -38,7 +38,7 @@ public class ToDoDAO {
             cursor.moveToFirst();
             do {
                 ToDo toDo = new ToDo();
-                toDo.setId(cursor.getInt(0));
+                toDo.setId(cursor.getString(0));
                 toDo.setTitle(cursor.getString(1));
                 toDo.setContent(cursor.getString(2));
                 toDo.setDate(cursor.getString(3));
